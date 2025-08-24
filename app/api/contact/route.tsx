@@ -1,7 +1,8 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Use your API key directly (not recommended for production, use env variable instead)
+const resend = new Resend("re_144ny2PG_HuByAW2Dd2d7uivzdj4vP8ab");
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,7 +18,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: "Portfolio Contact <0kevindelacruz0@gmail.com>", // Use verified sender
+      from: "Portfolio Contact <onboarding@resend.dev>", // Use verified sender
       to: ["0kevindelacruz0@gmail.com"], // Replace with your actual email
       subject: `Portfolio Contact: ${subject}`,
       html: `
