@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 
 export function Hero() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <section
@@ -34,7 +34,9 @@ export function Hero() {
           className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-2xl">
-            <div className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-300 mb-4">Kevin De La Cruz</div>
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-400 mb-4">
+              Kevin De La Cruz
+            </div>
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
               Junior Software Developer
             </span>
@@ -44,8 +46,9 @@ export function Hero() {
             Building modern web applications with passion and dedication
           </p>
           <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Eager to learn and grow while creating innovative, interactive, and performant applications using React,
-            Next.js, and modern web technologies.
+            Eager to learn and grow while creating innovative, interactive, and
+            performant applications using React, Next.js, and modern web
+            technologies.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -68,7 +71,7 @@ export function Hero() {
 
           <div className="flex justify-center space-x-6 mb-12">
             <a
-              href="https://github.com"
+              href="https://github.com/centerdata27"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-400 transition-all duration-300 hover:scale-110"
@@ -76,19 +79,19 @@ export function Hero() {
               <Github className="h-6 w-6" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/kdela3/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-400 transition-all duration-300 hover:scale-110"
             >
               <Linkedin className="h-6 w-6" />
             </a>
-            <a
+            {/* <a
               href="mailto:contact@example.com"
               className="text-gray-400 hover:text-blue-400 transition-all duration-300 hover:scale-110"
             >
               <Mail className="h-6 w-6" />
-            </a>
+            </a> */}
           </div>
         </div>
 
@@ -100,5 +103,5 @@ export function Hero() {
         </button>
       </div>
     </section>
-  )
+  );
 }
