@@ -36,12 +36,12 @@ const skillCategories = [
     skills: ["Optimization", "Caching", "Bundle Analysis", "Core Web Vitals"],
     color: "bg-chart-5/10 text-chart-5 border-chart-5/20",
   },
-  {
-    title: "Design & UX",
-    icon: <Palette className="h-6 w-6" />,
-    skills: ["UI/UX Design", "Figma", "Prototyping", "Accessibility"],
-    color: "bg-secondary/10 text-secondary border-secondary/20",
-  },
+  // {
+  //   title: "Design & UX",
+  //   icon: <Palette className="h-6 w-6" />,
+  //   skills: ["UI/UX Design", "Figma", "Prototyping", "Accessibility"],
+  //   color: "bg-secondary/10 text-secondary border-secondary/20",
+  // },
 ];
 
 export function Skills() {
