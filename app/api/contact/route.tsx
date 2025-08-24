@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>", // Use verified sender
+      from: "Portfolio Contact <0kevindelacruz0@gmail.com>", // Use verified sender
       to: ["0kevindelacruz0@gmail.com"], // Replace with your actual email
       subject: `Portfolio Contact: ${subject}`,
       html: `
