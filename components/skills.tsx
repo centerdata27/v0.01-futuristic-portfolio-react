@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Code, Database, Globe, Smartphone, Zap, Palette } from "lucide-react"
+import { useEffect, useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Code, Database, Globe, Smartphone, Zap, Palette } from "lucide-react";
 
 const skillCategories = [
   {
     title: "Frontend Development",
     icon: <Code className="h-6 w-6" />,
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "Vite"],
     color: "bg-primary/10 text-primary border-primary/20",
   },
-  {
-    title: "Backend Development",
-    icon: <Database className="h-6 w-6" />,
-    skills: ["Node.js", "Express", "PostgreSQL", "MongoDB", "GraphQL"],
-    color: "bg-accent/10 text-accent border-accent/20",
-  },
+  // {
+  //   title: "Backend Development",
+  //   icon: <Database className="h-6 w-6" />,
+  //   skills: ["Node.js", "Express", "PostgreSQL", "MongoDB", "GraphQL"],
+  //   color: "bg-accent/10 text-accent border-accent/20",
+  // },
   {
     title: "Web Technologies",
     icon: <Globe className="h-6 w-6" />,
@@ -42,26 +42,26 @@ const skillCategories = [
     skills: ["UI/UX Design", "Figma", "Prototyping", "Accessibility"],
     color: "bg-secondary/10 text-secondary border-secondary/20",
   },
-]
+];
 
 export function Skills() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
-      { threshold: 0.1 },
-    )
+      { threshold: 0.1 }
+    );
 
-    const element = document.getElementById("skills")
-    if (element) observer.observe(element)
+    const element = document.getElementById("skills");
+    if (element) observer.observe(element);
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -71,9 +71,12 @@ export function Skills() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">Technical Skills</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
+            Technical Skills
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive toolkit for building modern, scalable, and performant web applications
+            A comprehensive toolkit for building modern, scalable, and
+            performant web applications
           </p>
         </div>
 
@@ -112,5 +115,5 @@ export function Skills() {
         </div>
       </div>
     </section>
-  )
+  );
 }
